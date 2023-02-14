@@ -38,10 +38,25 @@
 <!--Make Images Mobile Responsive-->
 <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive">
 
-<!--Create a Bootstrap Button-->
-<!--Create a Block Element Bootstrap Button-->
-<!--Taste the Bootstrap Button Color Rainbow-->
-<button class="btn btn-primary btn-block">Like</button>
+<!--Use the Bootstrap Grid to Put Elements Side By Side-->
+<div class="row">
+  <!--Create a Bootstrap Button-->
+  <!--Create a Block Element Bootstrap Button-->
+  <!--Taste the Bootstrap Button Color Rainbow-->
+  <div class="col-xs-4">
+    <button class="btn btn-primary btn-block">Like</button>
+  </div>
+
+  <!--Call out Optional Actions with btn-info-->
+  <div class="col-xs-4">
+    <button class="btn btn-block btn-info">Info</button>
+  </div>
+
+  <!--Warn Your Users of a Dangerous Action with btn-danger-->
+  <div class="col-xs-4">
+    <button class="btn btn-block btn-danger">Delete</button>
+  </div>
+</div>
 <p>Things cats love:</p>
 <ul>
   <li>cat nip</li>
