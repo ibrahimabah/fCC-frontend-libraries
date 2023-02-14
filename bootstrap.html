@@ -21,11 +21,16 @@
 
 <!--Use Responsive Design with Bootstrap Fluid Containers-->
 <div class="container-fluid">
-    <!--Center Text with Bootstrap-->
+<!--Create a Custom Heading-->
 <div class="row">
-  <h2 class="text-primary text-center">CatPhotoApp</h2>
+  <div class="col-xs-8">
+    <!--Center Text with Bootstrap-->
+    <h2 class="text-primary text-center">CatPhotoApp</h2>
+  </div>
 
-<a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+<div class="col-xs-4">
+  <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+</div>
 </div>
 
 <!--Make Images Mobile Responsive-->
@@ -37,17 +42,20 @@
   <!--Create a Block Element Bootstrap Button-->
   <!--Taste the Bootstrap Button Color Rainbow-->
   <div class="col-xs-4">
-    <button class="btn btn-primary btn-block">Like</button>
+    <button class="btn btn-primary btn-block">
+      <!--Add Font Awesome Icons to our Buttons-->
+      <i class="fas fa-thumbs-up">Like</i>
+    </button>
   </div>
 
   <!--Call out Optional Actions with btn-info-->
   <div class="col-xs-4">
-    <button class="btn btn-block btn-info">Info</button>
+    <button class="btn btn-block btn-info"><i class="fas fa-info-circle">Info</i></button>
   </div>
 
   <!--Warn Your Users of a Dangerous Action with btn-danger-->
   <div class="col-xs-4">
-    <button class="btn btn-block btn-danger">Delete</button>
+    <button class="btn btn-block btn-danger"><i class="fas fa-trash">Info</i></button>
   </div>
 </div>
 <p>Things cats <span class="text-danger">love</span>:</p>
