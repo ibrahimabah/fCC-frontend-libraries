@@ -1,7 +1,14 @@
-<!--Code below this line should not be changed-->
+<!--Note that freecodecamp already included both the jQuery library and the Animate.css library in the background so that I focus on using the editor. So I am using jQuery to apply the Animate.css bounce class to your button elements-->
+
 <script>
-    $(document).ready(function(){});
+    $(document).ready(function(){
+        $("button").addClass("animated bounce");
+        $(".well").addClass("animated shake");
+        $("#target3").addClass("animated fadeout");
+    });
 </script>
+<!--Code below this line should not be changed-->
+
 <div class="container-fluid">
     <h3 class="text-primary text-center">JQuery Playground</h3>
     <div class="row">
