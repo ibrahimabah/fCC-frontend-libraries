@@ -1,18 +1,13 @@
 <style type='text/scss'>
-  @mixin border-radius($radius){
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    border-radius: $radius;
+  @for $j from 1 through 6 {
+    .text-#{$j} {font-size: 15px * $j;}
   }
   
   
-    #awesome {
-      width: 150px;
-      height: 150px;
-      background-color: green;
-      @include border-radius(15px);
-    }
   </style>
   
-  <div id="awesome"></div>
+  <p class="text-1">Hello</p>
+  <p class="text-2">Hello</p>
+  <p class="text-3">Hello</p>
+  <p class="text-4">Hello</p>
+  <p class="text-5">Hello</p>
