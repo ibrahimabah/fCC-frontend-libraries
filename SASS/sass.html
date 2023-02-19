@@ -1,15 +1,18 @@
 <style type='text/scss'>
-  .blog-post {
-    h1 {
-      text-align: center;
-      color: blue;}
-    p {
-      font-size: 20px;
-      }
+  @mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
   }
-</style>
-
-<div class="blog-post">
-  <h1>Blog Title</h1>
-  <p>This is a paragraph</p>
-</div>
+  
+  
+    #awesome {
+      width: 150px;
+      height: 150px;
+      background-color: green;
+      @include border-radius(15px);
+    }
+  </style>
+  
+  <div id="awesome"></div>
