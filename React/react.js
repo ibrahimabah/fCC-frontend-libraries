@@ -180,6 +180,8 @@ decrement(){
   }
 };
 
+
+// Use a Ternary Expression for Conditional Rendering
 const inputStyle = {
   width: 235,
   margin: 5
