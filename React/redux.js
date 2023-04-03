@@ -19,4 +19,7 @@ store = Redux.createStore(
  */
 let currentState = store.getState();
 
+//  >   >   >   >   >   Define a Redux Action   <   <   <   <   <
+
+
 
