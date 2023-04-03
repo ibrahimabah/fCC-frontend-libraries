@@ -20,6 +20,11 @@ store = Redux.createStore(
 let currentState = store.getState();
 
 //  >   >   >   >   >   Define a Redux Action   <   <   <   <   <
-
+/*
+    Declaring an "object" named 'action' and giving it a "property" of 'type' set to the "string" of 'LOGIN'
+ */
+const action = {
+    type: 'LOGIN'
+}
 
 
