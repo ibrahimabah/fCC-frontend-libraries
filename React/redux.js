@@ -10,8 +10,6 @@ const reducer = (state = 5) => {
 */
 const store = Redux.createStore(reducer);
 
-
-
 //  >   >   >   >   >   Get State from the Redux Store  <   <   <   <   <
 store = Redux.createStore(
     (state = 5) => state
@@ -21,23 +19,20 @@ store = Redux.createStore(
  */
 let currentState = store.getState();
 
+
+
 //  >   >   >   >   >   Define a Redux Action   <   <   <   <   <
-/*
-    Declaring an "object" named 'action' and giving it a "property" of 'type' set to the "string" of 'LOGIN'
- */
+// Declaring an "object" named 'action' and giving it a "property" of 'type' set to the "string" of 'LOGIN'
 const action = {
     type: 'LOGIN'
 }
-
-
 
 //  >   >   >   >   >   Define an Action Creator    <   <   <   <   <
 action = {
     type: 'LOGIN'
 }
-/*
-    Define a "function" named 'actionCreator()' that returns the action object when called.
- */
+
+// Define a "function" named 'actionCreator()' that returns the action object when called.
 function actionCreator(){
     return action;
 }
