@@ -32,3 +32,12 @@ const action = {
 
 
 //  >   >   >   >   >   Define an Action Creator    <   <   <   <   <
+action = {
+    type: 'LOGIN'
+}
+/*
+    Define a "function" named 'actionCreator()' that returns the action object when called.
+ */
+function actionCreator(){
+    return action;
+}
