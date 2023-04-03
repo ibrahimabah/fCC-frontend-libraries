@@ -10,6 +10,8 @@ const reducer = (state = 5) => {
 */
 const store = Redux.createStore(reducer);
 
+
+
 //  >   >   >   >   >   Get State from the Redux Store  <   <   <   <   <
 store = Redux.createStore(
     (state = 5) => state
@@ -28,3 +30,5 @@ const action = {
 }
 
 
+
+//  >   >   >   >   >   Define an Action Creator    <   <   <   <   <
