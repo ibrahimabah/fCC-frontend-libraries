@@ -36,3 +36,6 @@ action = {
 function actionCreator(){
     return action;
 }
+
+//  >   >   >   >   >   Dispatch an Action Event    <   <   <   <   <
+//
