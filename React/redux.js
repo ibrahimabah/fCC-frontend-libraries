@@ -9,3 +9,7 @@ const reducer = (state = 5) => {
     3: And Passing in the "reducer" as an argument.
 */
 const store = Redux.createStore(reducer);
+
+//  >   >   >   >   >   Get State from the Redux Store  <   <   <   <   <
+
+
