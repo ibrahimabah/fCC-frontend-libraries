@@ -38,4 +38,12 @@ function actionCreator(){
 }
 
 //  >   >   >   >   >   Dispatch an Action Event    <   <   <   <   <
-//
+store = Redux.createStore(
+    (state = {login: false}) => state
+  );
+  
+  const loginAction = () => {
+    return {
+      type: 'LOGIN'
+    }
+  };
