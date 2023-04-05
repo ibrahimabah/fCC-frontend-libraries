@@ -87,9 +87,27 @@ const defaultState = {
   };
   
   const authReducer = (state = defaultState, action) => {
-    // Change code below this line
-  
-    // Change code above this line
+    /*
+        Challenge Objective:
+        (1) Fill in the 'reducer' "function" to handle multiple authentication actions
+        (2) Use a "switch" statement in the 'reducer' to respond to different 'action' "events"
+        (3) The "switch" statement should switch over 'action.type' and 'return' the appropriate authentication 'state'. ( This is a standard pattern in writing Redux reducers. )
+
+        * Note:  Don't forget to write a 'default case' in your "switch statement" that "returns" the 'current state'. This is important avoid multiple reducers running any time an action dispatch is made, even when the action isn't related to that reducer.
+    */
+    switch (action.type) {
+        case 'LOGIN':
+            return {
+                authenticated: true
+            };
+        case 'LOGOUT':
+            return {
+                authenticated: false
+            };    
+        default:
+        return defaultState;
+    }
+    // end of "Use a Switch Statement to Handle Multiple Actions" challenge
   };
   
   store = Redux.createStore(authReducer);
