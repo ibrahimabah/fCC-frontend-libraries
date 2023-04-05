@@ -1,3 +1,4 @@
+//   => =>  =>  =>  =>  REDUX   <=  <=  <=  <=  <=
 //  >   >   >   >   >   Create a Redux Store    <   <   <   <   <
 const reducer = (state = 5) => {
     return state;
@@ -9,6 +10,7 @@ const reducer = (state = 5) => {
     (3) And Passing in the "reducer" as an argument
 */
 const store = Redux.createStore(reducer);
+//  ⬇   ⬇   ⬇   ⬇   ⬇
 
 //  >   >   >   >   >   Get State from the Redux Store  <   <   <   <   <
 store = Redux.createStore(
@@ -18,14 +20,14 @@ store = Redux.createStore(
     Retrieving data from "store" by using the "getState()"" method.
  */
 let currentState = store.getState();
-
-
+//  ⬇   ⬇   ⬇   ⬇   ⬇
 
 //  >   >   >   >   >   Define a Redux Action   <   <   <   <   <
 // Declaring an "object" named 'action' and giving it a "property" of 'type' set to the "string" of 'LOGIN'
 const action = {
     type: 'LOGIN'
 }
+//  ⬇   ⬇   ⬇   ⬇   ⬇
 
 //  >   >   >   >   >   Define an Action Creator    <   <   <   <   <
 action = {
@@ -35,6 +37,7 @@ action = {
 function actionCreator(){
     return action;
 }
+//  ⬇   ⬇   ⬇   ⬇   ⬇
 
 //  >   >   >   >   >   Dispatch an Action Event    <   <   <   <   <
 store = Redux.createStore(
@@ -49,6 +52,7 @@ const loginAction = () => {
 // Dispatching the 'LOGIN' "action" to the "Redux" 'store' by calling the "dispatch" method, and pass in the action created by 'loginAction()'.
 store.dispatch(loginAction());
 store.dispatch({type: 'LOGIN'});
+//  ⬇   ⬇   ⬇   ⬇   ⬇
 
 //  >   >   >   >   >   Handle an Action in the Store   <   <   <   <   <
 const defaultState = {
@@ -80,8 +84,9 @@ const defaultState = {
       type: 'LOGIN'
     }
   };
+//  ⬇   ⬇   ⬇   ⬇   ⬇
 
-  //    >   >   >   >   >   Use a Switch Statement to Handle Multiple Actions   <   <   <   <   <
+//    >   >   >   >   >   Use a Switch Statement to Handle Multiple Actions   <   <   <   <   <
   defaultState = {
     authenticated: false
   };
@@ -123,6 +128,7 @@ const defaultState = {
       type: 'LOGOUT'
     }
   };
+//  ⬇   ⬇   ⬇   ⬇   ⬇
 
 //    >   >   >   >   >   Use const for Action Types  <   <   <   <   <
   /*
@@ -173,6 +179,7 @@ const defaultState = {
       type: LOGOUT
     }
   };
+//  ⬇   ⬇   ⬇   ⬇   ⬇
 
 //    >   >   >   >   >   Register a Store Listener   <   <   <   <   <
 const ADD = 'ADD';
@@ -211,6 +218,7 @@ store.subscribe(callBack);
         store.dispatch({type: ADD});
         console.log(count);
 */
+//  ⬇   ⬇   ⬇   ⬇   ⬇
 
 //  >   >   >   >   >   Combine Multiple Reducers   <   <   <   <   <
 const INCREMENT = 'INCREMENT';
