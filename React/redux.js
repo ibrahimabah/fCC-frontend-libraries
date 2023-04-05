@@ -123,3 +123,41 @@ const defaultState = {
       type: 'LOGOUT'
     }
   };
+
+  //    >   >   >   >   >   Use const for Action Types  <   <   <   <   <
+  defaultState = {
+    authenticated: false
+  };
+  
+  authReducer = (state = defaultState, action) => {
+  
+    switch (action.type) {
+      case 'LOGIN': 
+        return {
+          authenticated: true
+        }
+      case 'LOGOUT': 
+        return {
+          authenticated: false
+        }
+  
+      default:
+        return state;
+  
+    }
+  
+  };
+  
+  store = Redux.createStore(authReducer);
+  
+  loginUser = () => {
+    return {
+      type: 'LOGIN'
+    }
+  };
+  
+  logoutUser = () => {
+    return {
+      type: 'LOGOUT'
+    }
+  };
