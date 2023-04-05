@@ -125,6 +125,18 @@ const defaultState = {
   };
 
   //    >   >   >   >   >   Use const for Action Types  <   <   <   <   <
+  /*
+    Challenge Objective:
+    (1)    Declare LOGIN and LOGOUT as const values
+    (2)    Assign them to the strings 'LOGIN' and 'LOGOUT', respectively. 
+    (3)    Edit the authReducer() and the action creators to reference these constants instead of string values.
+
+    *   Note:  It's generally a convention to write constants in all uppercase, and this is standard practice in Redux as well.
+*/
+  const LOGIN = 'LOGIN';
+  const LOGOUT = 'LOGOUT';
+// end of "Use const for Action Types" challenge (const values updated below respectively) 
+  
   defaultState = {
     authenticated: false
   };
@@ -132,11 +144,11 @@ const defaultState = {
   authReducer = (state = defaultState, action) => {
   
     switch (action.type) {
-      case 'LOGIN': 
+      case LOGIN: 
         return {
           authenticated: true
         }
-      case 'LOGOUT': 
+      case LOGOUT: 
         return {
           authenticated: false
         }
@@ -152,12 +164,12 @@ const defaultState = {
   
   loginUser = () => {
     return {
-      type: 'LOGIN'
+      type: LOGIN
     }
   };
   
   logoutUser = () => {
     return {
-      type: 'LOGOUT'
+      type: LOGOUT
     }
   };
