@@ -124,7 +124,7 @@ const defaultState = {
     }
   };
 
-  //    >   >   >   >   >   Use const for Action Types  <   <   <   <   <
+//    >   >   >   >   >   Use const for Action Types  <   <   <   <   <
   /*
     Challenge Objective:
     (1)    Declare LOGIN and LOGOUT as const values
@@ -174,10 +174,10 @@ const defaultState = {
     }
   };
 
-  //    >   >   >   >   >   Register a Store Listener   <   <   <   <   <
-  const ADD = 'ADD';
+//    >   >   >   >   >   Register a Store Listener   <   <   <   <   <
+const ADD = 'ADD';
 
-const reducer = (state = 0, action) => {
+reducer = (state = 0, action) => {
   switch(action.type) {
     case ADD:
       return state + 1;
@@ -186,18 +186,28 @@ const reducer = (state = 0, action) => {
   }
 };
 
-const store = Redux.createStore(reducer);
+store = Redux.createStore(reducer);
 
 // Global count variable:
 let count = 0;
 
-// Change code below this line
+/*
+    Challenge Objective:
+    (1)    Write a callback function 
+    (2)    Increment the global variable count every time the store receives an action
+    (3)    Pass this function in to the store.subscribe() method. 
+*/    
+const callBack = () => count++;
+store.subscribe(callBack);
+// end of "Register a Store Listener" challenge
 
-// Change code above this line
+/* 
+    You'll see that store.dispatch() is called three times in a row, each time directly passing in an action object. Watch the console output between the action dispatches to see the updates take place.
 
-store.dispatch({type: ADD});
-console.log(count);
-store.dispatch({type: ADD});
-console.log(count);
-store.dispatch({type: ADD});
-console.log(count);
+        store.dispatch({type: ADD});
+        console.log(count);
+        store.dispatch({type: ADD});
+        console.log(count);
+        store.dispatch({type: ADD});
+        console.log(count);
+*/
