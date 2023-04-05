@@ -56,9 +56,21 @@ const defaultState = {
   };
   
   reducer = (state = defaultState, action) => {
-    // Change code below this line
-  
-    // Change code above this line
+    /*
+        This challenge's requirement are to fill in the body of the reducer function:
+        (1) when it receives an "action" type of 'LOGIN'
+        (2) use an "if" statement to "return" a 'state' "object" set to 'true'
+        (3) otherwise "return" the "current" 'state'
+        * Note : the current state and the dispatched action are passed to the reducer, so you can access the action's type directly with action.type.
+     */
+    if (action.type === 'LOGIN') {
+        return {
+            login: true
+        };
+    } else {
+        return state;
+    }
+    // end of challenge
   };
   
   store = Redux.createStore(reducer);
