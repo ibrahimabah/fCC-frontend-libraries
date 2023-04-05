@@ -50,3 +50,6 @@ const loginAction = () => {
 store.dispatch(loginAction());
 store.dispatch({type: 'LOGIN'});
 
+//  >   >   >   >   >   Handle an Action in the Store   <   <   <   <   <
+
+
