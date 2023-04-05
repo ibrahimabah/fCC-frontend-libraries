@@ -227,8 +227,6 @@ const counterReducer = (state = 0, action) => {
   }
 };
 
-
-
 authReducer = (state = {authenticated: false}, action) => {
   switch(action.type) {
     case LOGIN:
@@ -244,6 +242,17 @@ authReducer = (state = {authenticated: false}, action) => {
   }
 };
 
-const rootReducer = // Define the root reducer here
+/*
+    Challenge Objective:
+    (1)    Finish writing the rootReducer() function 
+    (2)    Use the Redux.combineReducers() method. 
+    (3)    Assign counterReducer to a key called count 
+    (4)    And assign authReducer to a key called auth.
+*/
+const rootReducer = Redux.combineReducers({
+    count : counterReducer,
+    auth : authReducer
+}); // Define the root reducer here
+// end of "Combine Multiple Reducers" challenge
 
 store = Redux.createStore(rootReducer);
