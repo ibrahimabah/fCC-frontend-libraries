@@ -379,13 +379,31 @@ store = Redux.createStore(
     (4)    and finally define the "Redux" 'store'. 
     #    Note :  Once you're finished you should be able to dispatch INCREMENT or DECREMENT actions to increment or decrement the state held in the store
 */
-INCREMENT = null; // Define a constant for increment action types
-DECREMENT = null; // Define a constant for decrement action types
+INCREMENT = 'incAction'; // Define a constant for increment action types
+DECREMENT = 'decAction'; // Define a constant for decrement action types
 
-counterReducer = null; // Define the counter reducer which will increment or decrement the state based on the action it receives
+counterReducer = (state = 0, action)=> {
+    switch(action.type){
+      case INCREMENT:
+        return state + 1;
+      case DECREMENT:
+        return state - 1;  
+      default:
+        return state;  
+    }
+}; // Define the counter reducer which will increment or decrement the state based on the action it receives
 
-const incAction = null; // Define an action creator for incrementing
+const incAction = () => {
+  return {
+    type: INCREMENT
+  }
+}; // Define an action creator for incrementing
 
-const decAction = null; // Define an action creator for decrementing
+const decAction = () => {
+  return {
+    type: DECREMENT
+  }
+}; // Define an action creator for decrementing
 
-store = null; // Define the Redux store here, passing in your reducers
+store = Redux.createStore(counterReducer); // Define the Redux store here, passing in your reducers
+//  ⬇   ⬇   ⬇   ⬇   ⬇
