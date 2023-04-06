@@ -336,7 +336,7 @@ const handleAsync = () => {
       }
       // Dispatching 'received' "data"
       dispatch(receivedData(data));
-      
+
     }, 2500);
   }
 };
@@ -367,3 +367,4 @@ store = Redux.createStore(
   asyncDataReducer,
   Redux.applyMiddleware(ReduxThunk.default)
 );
+//  ⬇   ⬇   ⬇   ⬇   ⬇
