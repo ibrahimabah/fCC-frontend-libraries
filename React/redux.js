@@ -10,6 +10,7 @@ const reducer = (state = 5) => {
     (3) And Passing in the "reducer" as an argument
 */
 const store = Redux.createStore(reducer);
+// end of "Create a Redux Store" challenge
 //  ⬇   ⬇   ⬇   ⬇   ⬇
 
 //  >   >   >   >   >   Get State from the Redux Store  <   <   <   <   <
@@ -368,3 +369,23 @@ store = Redux.createStore(
   Redux.applyMiddleware(ReduxThunk.default)
 );
 //  ⬇   ⬇   ⬇   ⬇   ⬇
+
+//  >   >   >   >   >   Write a Counter with Redux  <   <   <   <   <
+/*
+    Challenge Objective:
+    (1)    define 'incAction' and decAction action creators, 
+    (2)    define the 'counterReducer()'
+    (3)    define INCREMENT and DECREMENT action types, 
+    (4)    and finally define the "Redux" 'store'. 
+    #    Note :  Once you're finished you should be able to dispatch INCREMENT or DECREMENT actions to increment or decrement the state held in the store
+*/
+INCREMENT = null; // Define a constant for increment action types
+DECREMENT = null; // Define a constant for decrement action types
+
+counterReducer = null; // Define the counter reducer which will increment or decrement the state based on the action it receives
+
+const incAction = null; // Define an action creator for incrementing
+
+const decAction = null; // Define an action creator for decrementing
+
+store = null; // Define the Redux store here, passing in your reducers
