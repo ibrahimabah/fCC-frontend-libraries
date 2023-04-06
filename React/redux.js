@@ -310,3 +310,4 @@ store = Redux.createStore(notesReducer);
         store.dispatch(addNoteText('Hello!'));
         console.log(store.getState());
  */
+//  ⬇   ⬇   ⬇   ⬇   ⬇
