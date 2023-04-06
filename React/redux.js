@@ -408,3 +408,33 @@ const decAction = () => {
 store = Redux.createStore(counterReducer); // Define the Redux store here, passing in your reducers
 //  ⬇   ⬇   ⬇   ⬇   ⬇
 
+//  >   >   >   >   >   Never Mutate State  <   <   <   <   <
+const ADD_TO_DO = 'ADD_TO_DO';
+
+// A list of strings representing tasks to do:
+const todos = [
+  'Go to the store',
+  'Clean the house',
+  'Cook dinner',
+  'Learn to code',
+];
+
+const immutableReducer = (state = todo, action) => {
+  switch(action.type) {
+    case ADD_TO_DO:// Don't mutate state here or the tests will fail
+      return state.concat(action.todo);// Finish writing the ADD_TO_DO case in the reducer to 'append' a "new" 'to-do' to the "state"
+      // end of "Never Mutate State" challenge
+    default:
+      return state;
+  }
+};
+
+const addToDo = (todo) => {
+  return {
+    type: ADD_TO_DO,
+    todo
+  }
+}
+
+store = Redux.createStore(immutableReducer);
+//  ⬇   ⬇   ⬇   ⬇   ⬇
