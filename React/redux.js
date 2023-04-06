@@ -311,3 +311,59 @@ store = Redux.createStore(notesReducer);
         console.log(store.getState());
  */
 //  ⬇   ⬇   ⬇   ⬇   ⬇
+
+//  >   >   >   >   >   Use Middleware to Handle Asynchronous Actions   <   <   <   <   <
+const REQUESTING_DATA = 'REQUESTING_DATA'
+const RECEIVED_DATA = 'RECEIVED_DATA'
+
+const requestingData = () => { return {type: REQUESTING_DATA} }
+const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }
+
+const handleAsync = () => {
+  return function(dispatch) {
+    /*
+        Challenge Objective:
+        (1)    Write both dispatches in the handleAsync() action creator. 
+        (2)    Dispatch 'requestingData()' before the 'setTimeout()' (the simulated API call). 
+        (3)    Then, after you receive the (pretend) data, "dispatch" the 'receivedData()' "action", passing in this "data".
+    */
+    // Dispatching 'request' "action" 
+    dispatch(requestingData());
+
+    setTimeout(function() {
+      let data = {
+        users: ['Jeff', 'William', 'Alice']
+      }
+      // Dispatching 'received' "data"
+      dispatch(receivedData(data));
+      
+    }, 2500);
+  }
+};
+
+defaultState = {
+  fetching: false,
+  users: []
+};
+
+const asyncDataReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case REQUESTING_DATA:
+      return {
+        fetching: true,
+        users: []
+      }
+    case RECEIVED_DATA:
+      return {
+        fetching: false,
+        users: action.users
+      }
+    default:
+      return state;
+  }
+};
+
+store = Redux.createStore(
+  asyncDataReducer,
+  Redux.applyMiddleware(ReduxThunk.default)
+);
