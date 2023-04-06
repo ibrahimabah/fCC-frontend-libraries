@@ -264,3 +264,49 @@ const rootReducer = Redux.combineReducers({
 // end of "Combine Multiple Reducers" challenge
 
 store = Redux.createStore(rootReducer);
+//  ⬇   ⬇   ⬇   ⬇   ⬇
+
+//  >   >   >   >   >   Send Action Data to the Store   <   <   <   <   <
+const ADD_NOTE = 'ADD_NOTE';
+
+const notesReducer = (state = 'Initial State', action) => {
+  switch(action.type) {
+    // start of "Send Action Data to the Store" challenge
+
+    /* 
+        Second Objective:
+        (1)    finish writing the 'switch' "statement" in the 'notesReducer()'
+        (2)    add a 'case' that handles the 'addNoteText()' "actions".
+        (3)    'case' should be triggered whenever there is an "action" of 'type' 'ADD_NOTE' and it should "return" the 'text' "property" on the incoming "action" as the new state.
+    */
+      case ADD_NOTE:
+        return action.text;
+      // added code is above
+    default:
+      return state;
+  }
+};
+
+const addNoteText = (note) => {
+  /*
+    first Objective:
+    (1)    Finish the body of the 'addNoteText()' "function" so that it returns an 'action' "object"
+    (2)    The "object" should include a 'type' property with a value of 'ADD_NOTE'
+    (3)    And also a 'text' property set to the 'note' "data" that's passed into the action creator.
+    # When you call the action creator, you'll pass in specific note information that you can access for the object.
+   */
+      return {
+        type: ADD_NOTE,
+        text: note
+      }
+  // end of "Send Action Data to the Store" challenge
+};
+
+store = Redux.createStore(notesReducer);
+
+/*
+    The action is dispatched here when the code is run
+        console.log(store.getState());
+        store.dispatch(addNoteText('Hello!'));
+        console.log(store.getState());
+ */
