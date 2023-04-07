@@ -438,3 +438,24 @@ const addToDo = (todo) => {
 
 store = Redux.createStore(immutableReducer);
 //  ⬇   ⬇   ⬇   ⬇   ⬇
+
+//  >   >   >   >   >   Use the Spread Operator on Arrays   <   <   <   <   <
+immutableReducer = (state = ['Do not mutate state!'], action) => {
+    switch(action.type) {
+      case 'ADD_TO_DO':
+        // Don't mutate state here or the tests will fail
+        let stat = [...state, action.todo]; // clone 'todo' using the "spread operator" 
+        return stat; // return a new copy of state when a to-do is added
+      default:
+        return state;
+    }
+  };
+  
+  addToDo = (todo) => {
+    return {
+      type: 'ADD_TO_DO',
+      todo
+    }
+  }
+  
+  store = Redux.createStore(immutableReducer);
