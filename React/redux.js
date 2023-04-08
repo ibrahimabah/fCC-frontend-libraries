@@ -483,3 +483,29 @@ immutableReducer = (state = [0,1,2,3,4,5], action) => {
   
   store = Redux.createStore(immutableReducer);
   //  ⬇   ⬇   ⬇   ⬇   ⬇
+
+//  >   >   >   >   >   Copy an Object with Object.assign   <   <   <   <   <
+const defaultState = {
+    user: 'CamperBot',
+    status: 'offline',
+    friends: '732,982',
+    community: 'freeCodeCamp'
+  };
+  
+  immutableReducer = (state = defaultState, action) => {
+    switch(action.type) {
+      case 'ONLINE':
+        // Don't mutate state here or the tests will fail
+        return  Object.assign({}, state, {status: "online"}); //Edit the code using Object.assign( to return a new state object for actions with type ONLINE, which set the status property to the string online ) to complete the challenge
+      default:
+        return state;
+    }
+  };
+  
+  const wakeUp = () => {
+    return {
+      type: 'ONLINE'
+    }
+  };
+  
+  store = Redux.createStore(immutableReducer);
