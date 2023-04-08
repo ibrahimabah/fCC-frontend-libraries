@@ -445,7 +445,8 @@ immutableReducer = (state = ['Do not mutate state!'], action) => {
       case 'ADD_TO_DO':
         // Don't mutate state here or the tests will fail
         let stat = [...state, action.todo]; // clone 'todo' using the "spread operator" 
-        return stat; // return a new copy of state when a to-do is added
+        return stat; // "return" a 'new copy' of state when a to-do is added
+        // end of "Use the Spread Operator on Arrays" challenge
       default:
         return state;
     }
@@ -468,7 +469,8 @@ immutableReducer = (state = [0,1,2,3,4,5], action) => {
         // Don't mutate state here or the tests will fail
         return [
             ...state.slice(0, action.index).concat(state.slice(action.index + 1, state.length))
-          ]; // Finish writing the reducer so a new state array is returned with the item at the specific index removed
+          ]; // Finish writing the "reducer" so a new state "array" is 'returned' with the item at the 'specific index' "removed"
+          // end of "Remove an Item from an Array" challenge
       default:
         return state;
     }
@@ -496,7 +498,8 @@ const defaultState = {
     switch(action.type) {
       case 'ONLINE':
         // Don't mutate state here or the tests will fail
-        return  Object.assign({}, state, {status: "online"}); //Edit the code using Object.assign( to return a new state object for actions with type ONLINE, which set the status property to the string online ) to complete the challenge
+        return  Object.assign({}, state, {status: "online"}); // Edit the code using "Object.assign()" to "return" a new state object for actions with "type" 'ONLINE', which set the 'status' "property" to the "string" 'online'
+        // end of "Copy an Object with Object.assign" challenge
       default:
         return state;
     }
@@ -509,3 +512,4 @@ const defaultState = {
   };
   
   store = Redux.createStore(immutableReducer);
+//    >   >   >   >   >   End of "Redux" Library    <   <   <   <   <  
