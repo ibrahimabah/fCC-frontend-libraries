@@ -12,7 +12,7 @@ class DisplayMessages extends React.Component {
     }// end of "Getting Started with React Redux" challenge
     //  ⬇   ⬇   ⬇   ⬇   ⬇
 
-    //  >   >   >   >   >   Manage State Locally First  <   <   <   <   <
+//  >   >   >   >   >   Manage State Locally First  <   <   <   <   <
     // Add handleChange() and submitMessage() methods here
     handleChange(event){
         this.setState({
@@ -46,7 +46,27 @@ class DisplayMessages extends React.Component {
     );
   }
   };
-  
 
+//  >   >   >   >   >   Extract State Logic to Redux    <   <   <   <   <   
+// Define ADD, addMessage(), messageReducer(), and store here:
+const ADD = 'ADD'; //   define an action type ADD and set it to a const ADD
+const addMessage = message => { // define an action creator addMessage() which creates the action to add a message and pass a message to this action creator and include the message in the returned action.
+  return {
+    type: ADD,
+    message
+  }
+}
+
+const messageReducer = (previousState = [], action) =>{ //  create a reducer called messageReducer() that handles the state for the messages.  
+  switch (action.type){
+    case ADD:
+      return [...previousState, action.message]; // The initial state should equal an empty array. This reducer should add a message to the array of messages held in state, 
+      break
+    default:
+    return previousState // or return the current state. 
+  }
+}
+
+const store = Redux.createStore(messageReducer); // create your Redux store and pass it the reducer.
 
 
