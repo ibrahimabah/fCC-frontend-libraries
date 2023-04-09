@@ -9,10 +9,12 @@ class DisplayMessages extends React.Component {
         input: "",
         messages: []
       }
-    }
-    // Change code above this line
+    }// end of "Getting Started with React Redux" challenge
     render() {
       return <div />
     }
   };
   //  ⬇   ⬇   ⬇   ⬇   ⬇
+
+//  >   >   >   >   >   Manage State Locally First  <   <   <   <   <
+
