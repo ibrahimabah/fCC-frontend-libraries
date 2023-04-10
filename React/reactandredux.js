@@ -103,5 +103,17 @@ const mapDispatchToProps = (dispatch) => { // create a mapDispatchToProps functi
   }
   //  ⬇   ⬇   ⬇   ⬇   ⬇
 
-
-
+//  >   >   >   >   >   Connect Redux to React  <   <   <   <   <  
+  class Presentational extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return <h3>This is a Presentational Component</h3>
+    }
+  };
+  
+  const connect = ReactRedux.connect;
+  // Change code below this line
+  const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps) (Presentational) /* Connect the Presentational component to Redux with the connect method from the ReactRedux global object, and call it immediately on the Presentational component. Assign the result to a new const called ConnectedComponent that represents the connected component. */
+  //  ⬇   ⬇   ⬇   ⬇   ⬇
