@@ -46,7 +46,7 @@ class DisplayMessages extends React.Component {
     );
   }
   };
-
+  
 //  >   >   >   >   >   Extract State Logic to Redux    <   <   <   <   <   
 // Define ADD, addMessage(), messageReducer(), and store here:
 const ADD = 'ADD'; //   define an action type ADD and set it to a const ADD
@@ -68,5 +68,19 @@ const messageReducer = (previousState = [], action) =>{ //  create a reducer cal
 }
 
 const store = Redux.createStore(messageReducer); // create your Redux store and pass it the reducer.
+//  ⬇   ⬇   ⬇   ⬇   ⬇
+
+//  >   >   >   >   >   Use Provider to Connect Redux to React  <   <   <   <   <
+const Provider = ReactRedux.Provider;
+class AppWrapper extends React.Component {
+    render(){// render the Provider
+        return (
+          <Provider store={store}> {/*pass the Redux store as a prop*/}
+            <DisplayMessages />{/* render the DisplayMessages component as a child */}
+          </Provider>
+        )
+      }
+    // Change code above this line
+  };
 
 
