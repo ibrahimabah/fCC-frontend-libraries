@@ -93,6 +93,15 @@ const mapStateToProps = messages => { // create a mapStateToProps function and c
   }
   //  ⬇   ⬇   ⬇   ⬇   ⬇
 
+//  >   >   >   >   >   Map Dispatch to Props   <   <   <   <   <
+const mapDispatchToProps = (dispatch) => { // create a mapDispatchToProps function with dispatch as an argument
+    return { // return an object with keys type and message
+      submitNewMessage: (message)=>{ // return a message to the dispatch function
+        dispatch(addMessage(message)) // dispatch addMEssage with submitNewMessage
+      }
+    }
+  }
+  //  ⬇   ⬇   ⬇   ⬇   ⬇
 
 
 
