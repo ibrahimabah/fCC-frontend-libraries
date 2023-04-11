@@ -169,5 +169,5 @@ ReactDOM.render(
 
 // Only change code below this line
 console.log('Now I know React and Redux!')
-//  ⬇   ⬇   ⬇   ⬇   ⬇
+//    >   >   >   >   >   End of "Redux and React" Library    <   <   <   <   <  
 
