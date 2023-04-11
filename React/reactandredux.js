@@ -133,3 +133,8 @@ class AppWrapper extends React.Component {
     );
   }
 };
+//  ⬇   ⬇   ⬇   ⬇   ⬇
+
+//  >   >   >   >   >   Extract Local State into Redux  <   <   <   <   <
+// updates on freeCodeCamp
+//  ⬇   ⬇   ⬇   ⬇   ⬇
