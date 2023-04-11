@@ -117,3 +117,19 @@ const mapDispatchToProps = (dispatch) => { // create a mapDispatchToProps functi
   // Change code below this line
   const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps) (Presentational) /* Connect the Presentational component to Redux with the connect method from the ReactRedux global object, and call it immediately on the Presentational component. Assign the result to a new const called ConnectedComponent that represents the connected component. */
   //  ⬇   ⬇   ⬇   ⬇   ⬇
+
+//  >   >   >   >   >   Connect Redux to the Messages App  <   <   <   <   < 
+const Container = connect(mapStateToProps, mapDispatchToProps) (Presentational) // Create a Container component held in a constant that uses connect to connect the Presentational component to Redux
+
+class AppWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() { // render the React Redux Provider component
+    return (
+      <Provider store={store}> {/* Pass Provider the Redux store as a prop*/}
+        <Container /> {/*  render Container as a child.   */}
+      </Provider>
+    );
+  }
+};
